@@ -25,11 +25,14 @@ public class CowMovement : MonoBehaviour
         //get cow player
         cow = gameObject.GetComponent<Rigidbody2D>();
 
+        //get the animations
+        animate = gameObject.GetComponent<Animator>();
+
         //initial start speeds
         //must put f after floats
-        speed = 3f;
+        speed = 2f;
         jumping = false;
-        jumpForce = 60f;
+        jumpForce = 30f;
         
     }
 
@@ -40,6 +43,9 @@ public class CowMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
 
+        //set to run/idle animation
+        animate.SetFloat("speed", Mathf.Abs(horizontal));
+
        
     }
 
@@ -49,6 +55,7 @@ public class CowMovement : MonoBehaviour
         if(horizontal > 0.1f || horizontal < -0.1f){
             //horizontal*speed is x axis, 0f means do not move vertically
             cow.AddForce(new Vector2(horizontal * speed, 0f), ForceMode2D.Impulse);
+            
         }
 
         //move player vertically
