@@ -29,7 +29,7 @@ public class CowMovement : MonoBehaviour
         //must put f after floats
         speed = 3f;
         jumping = false;
-        jumpForce = 10f;
+        jumpForce = 60f;
         
     }
 
