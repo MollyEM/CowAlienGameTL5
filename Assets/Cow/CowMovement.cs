@@ -5,7 +5,10 @@ using UnityEngine;
 public class CowMovement : MonoBehaviour
 {
     //player
-    private Rigidbody2D cow;
+    public Rigidbody2D cow;
+
+    //animation variable
+    private Animator animate;
 
     //player movement jump and speed
     private float speed;
@@ -26,7 +29,7 @@ public class CowMovement : MonoBehaviour
         //must put f after floats
         speed = 3f;
         jumping = false;
-        jumpForce = 60f;
+        jumpForce = 10f;
         
     }
 
@@ -36,34 +39,37 @@ public class CowMovement : MonoBehaviour
         //-1 = left, 0 = no key press, 1 = right
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
+
        
     }
 
     void FixedUpdate(){
 
         //if right, move right...if left move left
-        if(horizontal > 0f || horizontal < 0f){
+        if(horizontal > 0.1f || horizontal < -0.1f){
             //horizontal*speed is x axis, 0f means do not move vertically
             cow.AddForce(new Vector2(horizontal * speed, 0f), ForceMode2D.Impulse);
         }
 
         //move player vertically
-        if(jumping && vertical > 0f){
+        if(!jumping && vertical > 0.1f){
             //vertical*jump force is y axis, 0f means do not move horizontally
             cow.AddForce(new Vector2(0f, vertical * jumpForce), ForceMode2D.Impulse);
         }
 
-        //is the character in the air?
-        void OnTriggerEnter2D(Collider2D collision){
-            if(collision.gameObject.tag == "Platform"){
-                jumping = false;
-            }
-        }
+       
+    }
 
-        void OnTriggerExit2D(Collider2D collision){
-            if(collision.gameObject.tag == "Platform"){
-                jumping = true;
-            }
+     //is the character in the air?
+    void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.tag == "Platform"){
+            jumping = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision){
+        if(collision.gameObject.tag == "Platform"){
+            jumping = true;
         }
     }
 }
