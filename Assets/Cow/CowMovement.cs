@@ -16,6 +16,7 @@ public class CowMovement : MonoBehaviour
     private float horizontal;
     private bool jumping;
     private float jumpForce;
+    private bool isRight;
 
 
 
@@ -45,6 +46,16 @@ public class CowMovement : MonoBehaviour
 
         //set to run/idle animation
         animate.SetFloat("speed", Mathf.Abs(horizontal));
+
+        //set to jump animation
+        animate.SetFloat("jump", Mathf.Abs(vertical));
+
+        //flip if moving other direction
+        if(horizontal < 0 && !isRight){
+            Flip();
+        } else if (horizontal > 0 && isRight){
+            Flip();
+        }
 
        
     }
@@ -78,5 +89,12 @@ public class CowMovement : MonoBehaviour
         if(collision.gameObject.tag == "Platform"){
             jumping = true;
         }
+    }
+
+    void Flip(){
+        isRight = !isRight;
+        Vector2 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
     }
 }
