@@ -18,8 +18,6 @@ public class CowMovement : MonoBehaviour
     private float jumpForce;
     private bool isRight;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +31,7 @@ public class CowMovement : MonoBehaviour
         //must put f after floats
         speed = 2f;
         jumping = false;
-        jumpForce = 30f;
+        jumpForce = 50f;
         
     }
 
@@ -56,8 +54,6 @@ public class CowMovement : MonoBehaviour
         } else if (horizontal > 0 && isRight){
             Flip();
         }
-
-       
     }
 
     void FixedUpdate(){
@@ -73,9 +69,7 @@ public class CowMovement : MonoBehaviour
         if(!jumping && vertical > 0.1f){
             //vertical*jump force is y axis, 0f means do not move horizontally
             cow.AddForce(new Vector2(0f, vertical * jumpForce), ForceMode2D.Impulse);
-        }
-
-       
+        } 
     }
 
      //is the character in the air?
@@ -85,12 +79,14 @@ public class CowMovement : MonoBehaviour
         }
     }
 
+    //if the cow jumps onto a platform 
     void OnTriggerExit2D(Collider2D collision){
         if(collision.gameObject.tag == "Platform"){
             jumping = true;
         }
     }
 
+    //flip the character towards the direction he is moving
     void Flip(){
         isRight = !isRight;
         Vector2 currentScale = transform.localScale;
