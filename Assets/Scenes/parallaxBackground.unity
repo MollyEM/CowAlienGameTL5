@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1417753188}
-  subject: {fileID: 0}
+  subject: {fileID: 1740569803}
 --- !u!1 &875745735
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 1417753189}
   - component: {fileID: 1417753188}
   - component: {fileID: 1417753187}
+  - component: {fileID: 1417753190}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1053,6 +1054,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1417753190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417753186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311600ccb80b0d043855ac569bfbc9b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1740569803}
+  offset: {x: 0, y: 0, z: 0}
+  smoothFactor: 1
+  minVal: {x: -10, y: 0, z: 0}
+  maxVal: {x: 10, y: 10, z: 0}
 --- !u!1 &1571247117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1417753188}
-  subject: {fileID: 0}
+  subject: {fileID: 1740569803}
 --- !u!212 &1653181790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2023,7 +2041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1417753188}
-  subject: {fileID: 0}
+  subject: {fileID: 1740569803}
 --- !u!212 &2072864062
 SpriteRenderer:
   m_ObjectHideFlags: 0
