@@ -18,6 +18,9 @@ public class CowMovement : MonoBehaviour
     private float jumpForce;
     private bool isRight;
 
+    //player jump sound effect
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +71,7 @@ public class CowMovement : MonoBehaviour
         //move player vertically
         if(!jumping && vertical > 0.1f){
             //vertical*jump force is y axis, 0f means do not move horizontally
+            jumpSoundEffect.Play();
             cow.AddForce(new Vector2(0f, vertical * jumpForce), ForceMode2D.Impulse);
         } 
     }

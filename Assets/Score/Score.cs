@@ -11,6 +11,9 @@ public class Score : MonoBehaviour
     // Total points
     private int ScoreNum;
 
+    // 
+    [SerializeField] private AudioSource collectionSoundEffect;
+
     // The score is initially set to 0 and is displayed as such.
     void Start()
     {
@@ -23,6 +26,9 @@ public class Score : MonoBehaviour
     {
         if(Hay.tag == "MyHay")
         {
+            // Play sound effect
+            collectionSoundEffect.Play();
+
             // Update score
             ScoreNum += 100;
 
