@@ -12,6 +12,7 @@ public class Score : MonoBehaviour
     private int ScoreNum;
 
     // 
+    private bool alreadyScored;
     [SerializeField] private AudioSource collectionSoundEffect;
 
     // The score is initially set to 0 and is displayed as such.
@@ -26,17 +27,30 @@ public class Score : MonoBehaviour
     {
         if(Hay.tag == "MyHay")
         {
+            if (alreadyScored)
+                return;
+
+            alreadyScored = true;
+
             // Play sound effect
             collectionSoundEffect.Play();
-
-            // Update score
-            ScoreNum += 100;
 
             // Remove hay object
             Destroy(Hay.gameObject);
 
+            // Update score
+            ScoreNum += 100;
+
             // Update text that is displayed
             MyscoreText.text = "Score: " + ScoreNum;
+
+            StartCoroutine(waiter());
         }
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(0.05f);
+        alreadyScored = false;
     }
 }
