@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Start Screen.unity
+    guid: 3e3f3206cba06804f849e61b0801ac2d
+  - enabled: 1
+    path: Assets/Scenes/parallaxBackground.unity
+    guid: a0b47995913947f469b8e0ade8b69e59
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 1047e371b50240843ad37b10e6ba1f9e
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 28ae8cd1633aec941a566f274fbe8fec
   m_configObjects: {}
