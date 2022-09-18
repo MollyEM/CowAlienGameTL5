@@ -18,7 +18,7 @@ public class CowMovement : MonoBehaviour
     private float jumpForce;
     //private float velocity;
     private bool isRight;
-    private float fallMultiplier = 2.5f;
+    //private float fallMultiplier = 2.5f;
     //private float jumpMultiplier = 2f;
 
     //player jump sound effect

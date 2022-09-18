@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - MyHay
+  - Key
   layers:
   - Default
   - TransparentFX
