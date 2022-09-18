@@ -16,7 +16,10 @@ public class CowMovement : MonoBehaviour
     private float horizontal;
     private bool jumping;
     private float jumpForce;
+    //private float velocity;
     private bool isRight;
+    private float fallMultiplier = 2.5f;
+    //private float jumpMultiplier = 2f;
 
     //player jump sound effect
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -32,9 +35,10 @@ public class CowMovement : MonoBehaviour
 
         //initial start speeds
         //must put f after floats
-        speed = 1f;
+        speed = 0.25f;
         jumping = false;
-        jumpForce = 20f;
+        jumpForce = 5f;
+        //velocity = jumpForce;
         
     }
 
@@ -50,6 +54,7 @@ public class CowMovement : MonoBehaviour
 
         //set to jump animation
         animate.SetFloat("jump", Mathf.Abs(vertical));
+        //animate.SetFloat("jump", vertical);
 
         //flip if moving other direction
         if(horizontal < 0 && !isRight){
@@ -72,7 +77,10 @@ public class CowMovement : MonoBehaviour
         if(!jumping && vertical > 0.1f){
             //vertical*jump force is y axis, 0f means do not move horizontally
             jumpSoundEffect.Play();
+            //cow.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             cow.AddForce(new Vector2(0f, vertical * jumpForce), ForceMode2D.Impulse);
+            //transform.Translate(new Vector3(0f, velocity, 0f) * Time.deltaTime);
+            //cow.velocity = Vector2.up * jumpForce;
         } 
     }
 

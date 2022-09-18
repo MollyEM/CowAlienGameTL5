@@ -975,7 +975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.896004, y: 8.098907}
+  m_AnchoredPosition: {x: 21.895996, y: 8.098877}
   m_SizeDelta: {x: -394.107, y: -202.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &682300159
@@ -2835,8 +2835,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 20
+  m_Mass: 0.1
+  m_LinearDrag: 80
   m_AngularDrag: 0.05
   m_GravityScale: 12
   m_Material: {fileID: 0}
