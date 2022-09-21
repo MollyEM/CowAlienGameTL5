@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Task Screen.unity
     guid: d3f1ec9380393d245b007c2107a4e4ee
   - enabled: 1
-    path: Assets/Scenes/parallaxBackground.unity
+    path: Assets/Scenes/Dr. BC Mode.unity
     guid: a0b47995913947f469b8e0ade8b69e59
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
