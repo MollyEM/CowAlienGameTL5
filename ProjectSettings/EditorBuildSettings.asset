@@ -15,18 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Task Screen 2.unity
     guid: d3f1ec9380393d245b007c2107a4e4ee
   - enabled: 1
+    path: Assets/Scenes/Task Screen 1.unity
+    guid: dbdbb722522d6ba468bc583b5e512802
+  - enabled: 1
     path: Assets/Scenes/Dr. BC Mode.unity
     guid: a0b47995913947f469b8e0ade8b69e59
+  - enabled: 1
+    path: Assets/Scenes/parallaxBackground 1.unity
+    guid: 04678af6dc22edb4f9b245827fc81723
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 28ae8cd1633aec941a566f274fbe8fec
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 1047e371b50240843ad37b10e6ba1f9e
-  - enabled: 1
-    path: Assets/Scenes/Task Screen 1.unity
-    guid: dbdbb722522d6ba468bc583b5e512802
-  - enabled: 1
-    path: Assets/Scenes/parallaxBackground 1.unity
-    guid: 04678af6dc22edb4f9b245827fc81723
   m_configObjects: {}
