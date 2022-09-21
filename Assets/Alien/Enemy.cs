@@ -27,8 +27,8 @@ public class Enemy : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            //shootSoundEffect.Play();
-            //Instantiate(bullet, transform.position, Quaternion.identity);
+            shootSoundEffect.Play();
+            Instantiate(bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
     }
