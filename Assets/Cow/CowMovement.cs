@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CowMovement : MonoBehaviour
 {
@@ -128,6 +129,14 @@ public class CowMovement : MonoBehaviour
         hurtSoundEffect.Play();
         currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
+        if(currentHealth <= 0){
+            //if health is at zero, load the game over screen
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        }else{
+            healthBar.SetHealth(currentHealth);
+        }
+
+        
+        
     }
 }
