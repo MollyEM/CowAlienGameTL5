@@ -23,6 +23,14 @@ public class CowMovement : MonoBehaviour
 
     //player jump sound effect
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource hurtSoundEffect;
+
+    //player health bar
+    public int maxHealth = 16;
+    public int currentHealth;
+
+    public HealthBar healthBar;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +48,8 @@ public class CowMovement : MonoBehaviour
         jumpForce = 5.5f;
         //velocity = jumpForce;
         
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -84,10 +94,17 @@ public class CowMovement : MonoBehaviour
         } 
     }
 
-     //is the character in the air?
+     //is the character in the air? Did a bullet hit the character?
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Platform"){
             jumping = false;
+        }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            TakeDamage(4);
+            Debug.Log(currentHealth);
+            healthBar.SetHealth (currentHealth);
         }
     }
 
@@ -104,5 +121,13 @@ public class CowMovement : MonoBehaviour
         Vector2 currentScale = transform.localScale;
         currentScale.x *= -1;
         transform.localScale = currentScale;
+    }
+
+    void TakeDamage(int damage)
+    {
+        hurtSoundEffect.Play();
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
     }
 }
