@@ -73,6 +73,7 @@ public class CowMovement : MonoBehaviour
         } else if (horizontal > 0 && isRight){
             Flip();
         }
+        
     }
 
     void FixedUpdate(){
